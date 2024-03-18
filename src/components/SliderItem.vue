@@ -73,27 +73,24 @@ const handleMouseMove = (e: MouseEvent) => {
     }
 };
 
-
-const handleTouchMove = (e: TouchEvent) => {
-    if (scrollContainer.value && isDragging) {
-        e.preventDefault();
-
-        const x = e.touches[0].pageX - scrollContainer.value.offsetLeft;
-        const walk = (x - startX) * 2;
-        scrollContainer.value.scrollLeft = scrollLeft - walk;
-
-    }
-}
-
 const handleMouseUp = () => {
     isDragging = false
 };
-
 const handleMouseLeave = (e: MouseEvent) => {
     isDragging = false
 }
+
 const handleTouchStart = (event: TouchEvent) => {
-    isDragging = true
+    startX = event.touches[0].clientX;
+    isDragging = true;
+};
+
+const handleTouchMove = (event: TouchEvent) => {
+    if (!isDragging || !scrollContainer.value) return;
+    const deltaX = event.touches[0].clientX - startX;
+    scrollContainer.value!.scrollLeft -= deltaX;
+    startX = event.touches[0].clientX;
+    event.preventDefault();
 };
 
 
