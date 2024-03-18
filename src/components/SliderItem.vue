@@ -22,7 +22,7 @@
 
     <div ref="scrollContainer" class="carousel-indicators" @mousedown="handleMouseDown" @mouseup="handleMouseUp"
         @mousemove="handleMouseMove" @mouseleave="handleMouseLeave" @touchstart="handleTouchStart"
-        @touchmove="handleTouchMove">
+        @touchmove="handleTouchMove" @touchend="handleTouchEnd">
 
         <!-- <div class="thumbContainer"> -->
         <button v-for="elem, index in  data.thumbs" :key="data.id" :data-bs-target=data.id_target
@@ -92,6 +92,12 @@ const handleTouchMove = (event: TouchEvent) => {
     startX = event.touches[0].clientX;
     event.preventDefault();
 };
+
+
+const handleTouchEnd = () => {
+    isDragging = false;
+};
+
 
 const getSrc = (file: String) => {
     const newLink = "https://qwimi.github.io/photographer/" + file
