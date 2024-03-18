@@ -3,11 +3,12 @@ import BannerItem from '@/components/BannerItem.vue';
 import AboutMe from '@/components/AboutMe.vue';
 
 import { useGalleryStore } from '@/stores/store';
-import { onMounted, ref, watch } from 'vue';
+import { onMounted, ref, watch, type Ref } from 'vue';
 import SliderList from '@/components/SliderList.vue';
+import type { IPhotoset } from '@/stores/types';
 
-const photosets = ref([])
 const state = useGalleryStore()
+const photosets: Ref<IPhotoset[]> = ref(state.photosets)
 
 onMounted(() => state.getPhotosets())
 

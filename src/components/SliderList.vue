@@ -18,11 +18,12 @@
 </template>
 
 <script lang="ts" setup>
-import { defineProps } from "vue";
+import { defineProps, type PropType } from "vue";
 import SliderItem from "./SliderItem.vue";
+import type { IPhotoset } from "@/stores/types";
 const props = defineProps({
     data: {
-        type: Object,
+        type: Array as PropType<IPhotoset[]>,
         required: true,
     },
 });

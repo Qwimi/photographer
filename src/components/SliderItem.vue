@@ -1,10 +1,10 @@
 <template>
 
 
-    <div class="carousel slide" :id="data.id" data-bs-ride="carousel" data-interval="false">
+    <div class="carousel slide" :id="String(data.id)" data-bs-ride="carousel" data-interval="false">
 
         <div class="carousel-inner">
-            <div v-for="elem, index in   data.photos  " :key="data" class="carousel-item"
+            <div v-for="elem, index in   data.photos  " :key="data.id" class="carousel-item"
                 :class="{ active: index == 0 }">
                 <img loading="lazy" :src="elem" class="w-100">
             </div>
@@ -24,7 +24,7 @@
         @mousemove="handleMouseMove" @mouseleave="handleMouseLeave">
 
         <!-- <div class="thumbContainer"> -->
-        <button v-for="elem, index in  data.thumbs" :key="data" :data-bs-target=data.id_target
+        <button v-for="elem, index in  data.thumbs" :key="data.id" :data-bs-target=data.id_target
             :data-bs-slide-to="index">
             <img loading="lazy" :src="elem" class="w-100">
         </button>
@@ -38,10 +38,11 @@
 
 <script lang="ts" setup>
 
-import { defineProps, ref } from "vue";
+import type { IPhotoset } from "@/stores/types";
+import { defineProps, ref, type PropType } from "vue";
 const props = defineProps({
     data: {
-        type: Object,
+        type: Object as PropType<IPhotoset>,
         required: true,
     },
 });
