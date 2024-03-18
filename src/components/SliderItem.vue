@@ -6,7 +6,7 @@
         <div class="carousel-inner">
             <div v-for="elem, index in   data.photos  " :key="data.id" class="carousel-item"
                 :class="{ active: index == 0 }">
-                <img loading="lazy" :src="elem" class="w-100">
+                <img loading="lazy" :src="getSrc(elem)" class="w-100">
             </div>
         </div>
 
@@ -27,7 +27,7 @@
         <!-- <div class="thumbContainer"> -->
         <button v-for="elem, index in  data.thumbs" :key="data.id" :data-bs-target=data.id_target
             :data-bs-slide-to="index">
-            <img loading="lazy" :src="elem" class="w-100">
+            <img loading="lazy" :src="getSrc(elem)" class="w-100">
         </button>
         <!-- </div> -->
 
@@ -93,6 +93,10 @@ const handleTouchMove = (event: TouchEvent) => {
     event.preventDefault();
 };
 
+const getSrc = (file: String) => {
+    const newLink = "https://qwimi.github.io/photographer/" + file
+    return newLink
+}
 
 
 </script>
