@@ -21,7 +21,8 @@
     </div>
 
     <div ref="scrollContainer" class="carousel-indicators" @mousedown="handleMouseDown" @mouseup="handleMouseUp"
-        @mousemove="handleMouseMove" @mouseleave="handleMouseLeave">
+        @mousemove="handleMouseMove" @mouseleave="handleMouseLeave" @touchstart="handleTouchStart"
+        @touchmove="handleTouchMove">
 
         <!-- <div class="thumbContainer"> -->
         <button v-for="elem, index in  data.thumbs" :key="data.id" :data-bs-target=data.id_target
@@ -72,6 +73,18 @@ const handleMouseMove = (e: MouseEvent) => {
     }
 };
 
+
+const handleTouchMove = (e: TouchEvent) => {
+    if (scrollContainer.value && isDragging) {
+        e.preventDefault();
+
+        const x = e.touches[0].pageX - scrollContainer.value.offsetLeft;
+        const walk = (x - startX) * 2;
+        scrollContainer.value.scrollLeft = scrollLeft - walk;
+
+    }
+}
+
 const handleMouseUp = () => {
     isDragging = false
 };
@@ -79,6 +92,10 @@ const handleMouseUp = () => {
 const handleMouseLeave = (e: MouseEvent) => {
     isDragging = false
 }
+const handleTouchStart = (event: TouchEvent) => {
+    isDragging = true
+};
+
 
 
 </script>

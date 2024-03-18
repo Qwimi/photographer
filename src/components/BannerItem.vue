@@ -38,7 +38,8 @@ h2.subtitle {
   bottom: 7.5%;
   left: 50%;
   transform: translateX(-50%);
-  font-size: clamp(18px, 4vw, 36px);
+  font-size: clamp(16px, 4vw, 36px);
   font-weight: 700;
+  white-space: nowrap;
 }
 </style>
