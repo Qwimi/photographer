@@ -7,7 +7,7 @@ export const useGalleryStore = defineStore('photosets', {
   actions: {
     async getPhotosets() {
       try {
-        const response = await fetch('http://localhost:5173/photosets.json')
+        const response = await fetch('https://qwimi.github.io/photographer/photosets.json')
         const data = await response.json()
         this.photosets = data.photosets
       } catch (error) {
