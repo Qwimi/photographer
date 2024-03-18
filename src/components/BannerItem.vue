@@ -17,11 +17,11 @@
 <style scoped>
 .banner {
   position: relative;
-  min-height: 95vh;
   background: url(@/assets/banner.jpg);
   background-size: cover;
   background-position: center center;
   text-align: center;
+  aspect-ratio: 16/10;
 }
 
 
