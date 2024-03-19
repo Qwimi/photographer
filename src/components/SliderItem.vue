@@ -24,12 +24,10 @@
         @mousemove="handleMouseMove" @mouseleave="handleMouseLeave" @touchstart="handleTouchStart"
         @touchmove="handleTouchMove" @touchend="handleTouchEnd">
 
-        <!-- <div class="thumbContainer"> -->
         <button v-for="elem, index in  data.thumbs" :key="data.id" :data-bs-target=data.id_target
             :data-bs-slide-to="index">
             <img loading="lazy" :src="getSrc(elem)" class="w-100">
         </button>
-        <!-- </div> -->
 
     </div>
 
@@ -115,6 +113,11 @@ const getSrc = (file: String) => {
 
 .carousel-indicators img {
     display: block;
+    aspect-ratio: 16/9;
+}
+
+.carousel-item img {
+    aspect-ratio: 16/10;
 }
 
 .carousel-indicators button {
@@ -124,28 +127,6 @@ const getSrc = (file: String) => {
     height: max-content !important;
     opacity: 1 !important;
     cursor: grab;
-}
-
-
-
-@media screen and (max-width: 768px) {
-    .carousel-indicators button {
-        width: 100px;
-        min-width: 100px;
-        max-width: 100px;
-    }
-}
-
-@media screen and (max-width: 425px) {
-    .carousel-indicators button {
-        width: 75px;
-        min-width: 75px;
-        max-width: 75px;
-    }
-}
-
-.carousel-item img {
-    aspect-ratio: 16/9;
 }
 
 .carousel-indicators {
@@ -164,19 +145,61 @@ const getSrc = (file: String) => {
 }
 
 .carousel-control-prev {
-    left: -15%;
+    left: -10%;
+}
+
+.carousel-control-next {
+    right: -10%;
 }
 
 .carousel-control-prev-icon {
     background-image: url("@/assets/left.svg");
 }
 
-.carousel-control-next {
-    right: -15%;
-}
-
 .carousel-control-next-icon {
     background-image: url("@/assets/right.svg");
+}
 
+
+@media screen and (min-width: 1025px) {
+    .carousel-control-prev {
+        left: -15%;
+    }
+
+    .carousel-control-next {
+        right: -15%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .carousel-indicators button {
+        width: 100px;
+        min-width: 100px;
+        max-width: 100px;
+    }
+
+    .carousel-control-prev {
+        left: -5%;
+    }
+
+    .carousel-control-next {
+        right: -5%;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .carousel-indicators button {
+        width: 75px;
+        min-width: 75px;
+        max-width: 75px;
+    }
+
+    .carousel-control-prev {
+        left: 0;
+    }
+
+    .carousel-control-next {
+        right: 0;
+    }
 }
 </style>

@@ -21,7 +21,7 @@
   background-size: cover;
   background-position: center center;
   text-align: center;
-  aspect-ratio: 16/10;
+  aspect-ratio: 16/9;
 }
 
 

@@ -31,7 +31,11 @@ const props = defineProps({
 // console.log(data[0]);
 </script>
 
-<style>
+<style scoped>
+.title {
+    margin-bottom: 1rem;
+}
+
 .divider {
     width: 100%;
     margin: 6em 0;
