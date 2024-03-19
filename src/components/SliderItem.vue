@@ -113,11 +113,13 @@ const getSrc = (file: String) => {
 
 .carousel-indicators img {
     display: block;
-    aspect-ratio: 16/9;
+    aspect-ratio: 16/10;
+    object-fit: cover;
 }
 
 .carousel-item img {
     aspect-ratio: 16/10;
+    object-fit: cover;
 }
 
 .carousel-indicators button {
