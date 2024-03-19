@@ -32,8 +32,6 @@ section {
   .wrapper {
     width: 95%;
   }
-
-
   section {
     margin-top: 6.25rem;
   }
@@ -45,5 +43,9 @@ section {
 
   section {
     margin-top: 3rem;
+  }
+  
+  .title{
+    margin-bottom: 3rem!important;
   }
 }
