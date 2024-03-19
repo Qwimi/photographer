@@ -53,5 +53,6 @@ const props = defineProps({
     transform: translateX(-50%);
     width: 100vw;
     background-image: url("@/assets/bg.svg");
+    background-repeat: space    ;
 }
 </style>

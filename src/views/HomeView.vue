@@ -24,16 +24,6 @@ watch(
     <BannerItem />
   </header>
   <main>
-    <!-- <div class="container-lg mt-5">
-      <div class="row">
-        <div class="col">
-          <img src="@/assets/m2/1.webp" style="aspect-ratio: 16/9; width: 100%" alt="">
-        </div>
-        <div class="col">
-          <img src="@/assets/m2/1.webp" style="aspect-ratio: 16/10;  width: 100%" alt="">
-        </div>
-      </div>
-    </div> -->
     <AboutMe />
     <SliderList :data="photosets" />
   </main>

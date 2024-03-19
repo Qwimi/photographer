@@ -98,7 +98,7 @@ const handleTouchEnd = () => {
 
 
 const getSrc = (file: String) => {
-    const newLink = "https://qwimi.github.io/photographer/" + file
+    const newLink = "https://qwimi.github.io/" + file
     return newLink
 }
 
