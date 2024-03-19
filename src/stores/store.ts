@@ -8,9 +8,9 @@ export const useGalleryStore = defineStore('photosets', {
     async getPhotosets() {
       try {
         // const response = await fetch('https://localhost:5173/photosets.json')
-        // const response = await fetch('https://braburis.ru/photosets.json')
+        const response = await fetch('https://braburis.ru/photosets.json')
 
-        const response = await fetch('https://qwimi.github.io/photographer/photosets.json')
+        // const response = await fetch('https://qwimi.github.io/photographer/photosets.json')
 
         const data = await response.json()
         this.photosets = data.photosets
