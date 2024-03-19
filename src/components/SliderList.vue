@@ -6,10 +6,9 @@
 
             <div v-for="photoset, index  in data" :key="photoset.id">
                 <SliderItem :data="photoset" />
-
-                <!-- {{  }} -->
                 <div class="divider" v-if="index != (data.length - 1)"></div>
             </div>
+            <div class="divider"></div>
 
 
         </div>
@@ -49,10 +48,10 @@ const props = defineProps({
     height: 100%;
     left: 50%;
     top: 0;
-    width: 100vw;
     transform: translateX(-50%);
-    width: 100vw;
+    width: 140%;
+    max-width: 95vw;
     background-image: url("@/assets/bg.svg");
-    background-repeat: space    ;
+    background-repeat: space;
 }
 </style>
