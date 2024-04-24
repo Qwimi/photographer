@@ -4,7 +4,7 @@
     <div class="carousel slide" :id="String(data.id)" data-bs-ride="carousel" data-interval="false">
 
         <div class="carousel-inner">
-            <div v-for="elem, index in   data.photos  " :key="data.id" class="carousel-item"
+            <div v-for="elem, index in data.photos  " :key="data.id" class="carousel-item"
                 :class="{ active: index == 0 }">
                 <img loading="lazy" :src="getSrc(elem)" class="w-100">
             </div>
@@ -24,7 +24,7 @@
         @mousemove="handleMouseMove" @mouseleave="handleMouseLeave" @touchstart="handleTouchStart"
         @touchmove="handleTouchMove" @touchend="handleTouchEnd">
 
-        <button v-for="elem, index in  data.thumbs" :key="data.id" :data-bs-target=data.id_target
+        <button v-for="elem, index in data.thumbs" :key="data.id" :data-bs-target=data.id_target
             :data-bs-slide-to="index">
             <img loading="lazy" :src="getSrc(elem)" class="w-100">
         </button>
@@ -99,6 +99,7 @@ const handleTouchEnd = () => {
 
 const getSrc = (file: String) => {
     const newLink = "https://braburis.ru/" + file
+    // const newLink = "http://localhost:5173/" + file
     return newLink
 }
 
