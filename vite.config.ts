@@ -4,8 +4,7 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  // base: '/photographer',
-  base: '/',
+  base: '/photographer',
   plugins: [vue()],
   resolve: {
     alias: {
